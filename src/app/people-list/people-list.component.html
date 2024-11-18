@@ -1,0 +1,21 @@
+<div *ngIf="loading">Loading...</div>
+<table *ngIf="!loading" border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Height</th>
+      <th>Mass</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of people">
+      <td>{{ person.name }}</td>
+      <td>{{ person.height }}</td>
+      <td>{{ person.mass }}</td>
+      <td>
+        <button (click)="viewDetails(person.url)">View Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
